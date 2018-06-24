@@ -1,0 +1,35 @@
+<%-include("./component/header")%>
+
+    <body>
+        <div id="app">
+            <%-include("./component/button")%>
+        </div>
+        <%-include("./component/common")%>
+            <script>
+                var json = <%- JSON.stringify(title) %>;
+                json = JSON.parse(json);
+
+                var VM = new Vue({
+                    el: '#app',
+                    data: {
+                        visible: false,
+                        tableData: json.data,
+                        tableDataone: []
+                    },
+                    methods: {
+                        onSubmit() {
+                            axios.get('/getdata', {
+                                    params: {
+                                        page: 1
+                                    }
+                                })
+                                .then(function (response) {
+                                    VM.tableDataone = response.data.data
+                                })
+                        }
+                    }
+                })
+            </script>
+    </body>
+
+    </html>

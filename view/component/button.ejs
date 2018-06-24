@@ -1,0 +1,28 @@
+<el-steps :space="200" :active="1" finish-status="success">
+    <el-step title="已完成"></el-step>
+    <el-step title="进行中"></el-step>
+    <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-row>
+    <el-button>默认按钮</el-button>
+    <el-button type="primary">主要按钮</el-button>
+    <el-button type="success">成功按钮</el-button>
+    <el-button type="info">信息按钮</el-button>
+    <el-button type="warning">警告按钮</el-button>
+    <el-button type="danger">危险按钮</el-button>
+</el-row>
+<div>
+    <el-button @click="visible = true">Button</el-button>
+    <el-button type="primary" @click="onSubmit">点击试试</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+        <p>Try Element</p>
+    </el-dialog>
+
+</div>
+
+<template>
+    <el-table :data="tableDataone" style="width: 100%">
+        <el-table-column prop="femalename" label="名称" width="180">
+        </el-table-column>
+    </el-table>
+</template>
