@@ -4,4 +4,4 @@ koa2-vue-ssr
 
 npm i
 
-upervisor app.js 热重启
+supervisor app.js 热重启
