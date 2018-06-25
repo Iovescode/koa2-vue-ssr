@@ -20,14 +20,14 @@ app.use(static(
     path.join(__dirname, './static')
 ))
 
-router.get('/', async function (ctx, next) {
+router.get('/one', async function (ctx, next) {
     let title = 'hello koa2'
     await ctx.render('index',{
         title
     })
 });
 
-router.get('/one', async function (ctx, next) {
+router.get('/', async function (ctx, next) {
     var res =await koa2Req('https://www.apiopen.top/femaleNameApi?page=1', ) ;
     var title=res.body;
     await ctx.render('index',{
